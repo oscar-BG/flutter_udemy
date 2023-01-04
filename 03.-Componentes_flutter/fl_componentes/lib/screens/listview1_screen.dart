@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class Listviwe1Screen extends StatelessWidget {
+class Listview1Screen extends StatelessWidget {
    
-  const Listviwe1Screen({Key? key}) : super(key: key);
+  const Listview1Screen({Key? key}) : super(key: key);
 
   final options = const['Megaman', 'Metal Gear', 'Super smash', 'Final Fantasy'];
   
@@ -19,7 +19,8 @@ class Listviwe1Screen extends StatelessWidget {
               title: Text(game),
               trailing: const Icon(Icons.arrow_forward_ios_outlined),
             ) 
-          ).toList()
+          ).toList(),
+          const Divider(),
         ],
       )
     );
