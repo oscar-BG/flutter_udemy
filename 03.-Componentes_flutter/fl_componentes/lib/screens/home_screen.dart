@@ -1,6 +1,6 @@
+import 'package:fl_componentes/router/app_routes.dart';
+import 'package:fl_componentes/theme/app_theme.dart';
 import 'package:flutter/material.dart';
-
-import 'screens.dart';
 
 class HomeScreen extends StatelessWidget {
    
@@ -11,14 +11,13 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Componentes en Flutter'),
-        elevation: 0,
       ),
       body: ListView.separated(
         itemBuilder: (context, index) =>  ListTile(
-          leading: const Icon(Icons.access_time_outlined),
-          title: const Text('Nombre de la ruta'),
+          title: Text(AppRoutes.menuOptions[index].name.toString()),
+          leading: Icon(AppRoutes.menuOptions[index].icon, color: AppTheme.primary,),
           onTap: () {
-
+            
             // *** Primera forma para navegar entre paginas ***//
 
             // Navegar a otra pantalla con navigator, enviamos el 
@@ -36,11 +35,11 @@ class HomeScreen extends StatelessWidget {
             // *** Segunda form para nevegar entre paginas ** //
             
             // routeName: nombre de la ruta que especificamos en el archivo main en routes
-            Navigator.pushNamed(context, '/card2');
+            Navigator.pushNamed(context, AppRoutes.menuOptions[index].route.toString());
           }
         ), 
         separatorBuilder: (_, __) => const Divider(), 
-        itemCount: 10
+        itemCount: AppRoutes.menuOptions.length
       )
     );
   }

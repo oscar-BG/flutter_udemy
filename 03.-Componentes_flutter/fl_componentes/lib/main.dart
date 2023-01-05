@@ -1,5 +1,7 @@
-import 'package:fl_componentes/router/app_routes.dart';
 import 'package:flutter/material.dart';
+
+import 'package:fl_componentes/router/app_routes.dart';
+import 'package:fl_componentes/theme/app_theme.dart';
 
 
 
@@ -15,8 +17,9 @@ class MyApp extends StatelessWidget {
       title: 'Material App',
       // home: const CardScreen(), // llamar a un screen especifico
       initialRoute: AppRoutes.initialRoute,
-      routes: AppRoutes.routes,
+      routes: AppRoutes.getAppRoutes(),
       onGenerateRoute: AppRoutes.onGenerateRoute,
+      theme: AppTheme.lightTheme
     );
   }
 }
